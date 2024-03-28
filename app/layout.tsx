@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NavbarMenu } from "@/components/layout/navbar";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
@@ -60,10 +61,12 @@ export default function RootLayout({
       )}
     >
       <body>
-        <div className="relative w-full flex items-center justify-center">
-          <NavbarMenu />
-        </div>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="relative w-full flex items-center justify-center">
+            <NavbarMenu />
+          </div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

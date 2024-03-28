@@ -61,6 +61,20 @@ export default defineType({
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     defineArrayMember({
+      type: "code",
+      name: "code",
+      title: "Code with all options",
+      options: {
+        language: "javascript",
+        languageAlternatives: [
+          { title: "Javascript", value: "javascript" },
+          { title: "HTML", value: "html" },
+          { title: "CSS", value: "css" },
+        ],
+        withFilename: true,
+      },
+    }),
+    defineArrayMember({
       type: "image",
       options: { hotspot: true },
       fields: [
