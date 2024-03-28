@@ -1,9 +1,11 @@
-import Image from "next/image";
+import HeroSection from "@/components/hero-section";
+import { SiteFooter } from "@/components/layout/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h2>next-shadcn-sanity-blog</h2>
+    <main className="min-h-screen antialiased">
+      <HeroSection />
+      <SiteFooter />
     </main>
   );
 }

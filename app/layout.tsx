@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { NavbarMenu } from "@/components/layout/navbar";
+
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
@@ -52,12 +54,17 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        "text-black bg-white dark:text-white dark:bg-[#111010]",
+        "text-black bg-white dark",
         GeistSans.variable,
         GeistMono.variable,
       )}
     >
-      <body>{children}</body>
+      <body>
+        <div className="relative w-full flex items-center justify-center">
+          <NavbarMenu />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
