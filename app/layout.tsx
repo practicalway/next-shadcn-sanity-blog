@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
+import { SiteFooter } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"), // Change to your project's domain
@@ -66,6 +67,7 @@ export default function RootLayout({
             <NavbarMenu />
           </div>
           {children}
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>

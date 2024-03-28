@@ -20,7 +20,7 @@ function HeroSection() {
           Sanity.io as its robust headless CMS.
         </p>
         <div className="mt-10">
-          <Link href={"/courses"}>
+          <Link href={"/blog"}>
             <Button>Explore blog</Button>
           </Link>
         </div>

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import Image from "next/image";
-import { urlForImage } from "../lib/sanity";
+import { urlForImage } from "../../../sanity/lib/image";
 
 interface SanityImageAsset {
   _ref?: string;
