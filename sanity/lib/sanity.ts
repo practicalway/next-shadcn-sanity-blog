@@ -67,6 +67,49 @@ export type VideoCategory = {
   color: string;
 };
 
+export type Work = {
+  _id: string;
+  mainTitle: string;
+  mainDescription: string;
+  resume: Resume[];
+  techStack: TechStack[];
+  projects: Project[];
+};
+
+export type Resume = {
+  _key: string;
+  title: string;
+  description: Block[];
+  image: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+  };
+  startDate: string;
+  endDate: string;
+  isCurrent: boolean;
+};
+
+export type TechStack = {
+  _key: string;
+  language: string;
+  image: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+  };
+  proficiency: number;
+};
+
+export type Project = {
+  _key: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
 export async function getCategories(): Promise<Category[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "category"] | order(ordering asc) {
@@ -413,4 +456,45 @@ export async function getPreviousPostInSameCategory(
   );
 
   return previousPost;
+}
+
+export async function getWork(): Promise<Work> {
+  const query = groq`*[_type == "work"][0] {
+    _id,
+    mainTitle,
+    mainDescription,
+    resume[]{
+      _key,
+      title,
+      description,
+      image{
+        asset->{
+          _id,
+          url
+        }
+      },
+      startDate,
+      endDate,
+      isCurrent
+    },
+    techStack[]{
+      _key,
+      language,
+      image{
+        asset->{
+          _id,
+          url
+        }
+      },
+      proficiency
+    },
+    projects[]{
+      _key,
+      title,
+      description,
+      link
+    }
+  }`;
+
+  return createClient(clientConfig).fetch(query);
 }
