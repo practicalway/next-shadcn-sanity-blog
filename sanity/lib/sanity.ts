@@ -488,12 +488,6 @@ export async function getWork(): Promise<Work> {
       },
       proficiency
     },
-    projects[]{
-      _key,
-      title,
-      description,
-      link
-    }
   }`;
 
   return createClient(clientConfig).fetch(query);

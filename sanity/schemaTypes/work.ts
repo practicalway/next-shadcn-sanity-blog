@@ -89,32 +89,5 @@ export default {
         },
       ],
     },
-    {
-      name: "projects",
-      title: "Projects",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "title",
-              title: "Title",
-              type: "string",
-            },
-            {
-              name: "description",
-              title: "Description",
-              type: "text",
-            },
-            {
-              name: "link",
-              title: "Link",
-              type: "url",
-            },
-          ],
-        },
-      ],
-    },
   ],
 };

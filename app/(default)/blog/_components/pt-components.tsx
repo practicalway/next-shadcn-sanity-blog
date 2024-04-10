@@ -11,9 +11,7 @@ type Props = {
 };
 
 const StyledParagraph: React.FC = ({ children }: any) => {
-  return (
-    <p className="my-2 text-base leading-relaxed text-slate-200">{children}</p>
-  );
+  return <p className="my-2 text-base leading-relaxed">{children}</p>;
 };
 
 export const ptComponents: PortableTextComponents = {

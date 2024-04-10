@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { NavbarMenu } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { SiteFooter } from "@/components/layout/footer";
-
+import Header from "@/components/layout/header";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"), // Change to your project's domain
   title: {
@@ -55,19 +54,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-white dark",
-        GeistSans.variable,
-        GeistMono.variable,
-      )}
+      className={cx("text-black  dark", GeistSans.variable, GeistMono.variable)}
     >
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative w-full flex items-center justify-center">
-            <NavbarMenu />
-          </div>
-          {children}
-          <SiteFooter />
+          <main className="min-h-screen antialiased">
+            <Header />
+            {children}
+            <SiteFooter />
+          </main>
         </ThemeProvider>
       </body>
     </html>

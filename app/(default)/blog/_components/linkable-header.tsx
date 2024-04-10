@@ -23,7 +23,7 @@ export const LinkableHeader: PortableTextBlockComponent = ({
 
   return (
     <div className="mt-8">
-      <span className={`font-bold ${textSizeClass} text-slate-200`} id={slug}>
+      <span className={`font-bold ${textSizeClass}`} id={slug}>
         <a className="slug-anchor" href={`#${slug}`}>
           {children}
         </a>
