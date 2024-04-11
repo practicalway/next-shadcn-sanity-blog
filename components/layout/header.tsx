@@ -14,7 +14,9 @@ export default function Header() {
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-1">
-            <IconBox />
+            <Link href="/">
+              <IconBox />
+            </Link>
           </div>
           <nav className="hidden md:flex md:grow">
             <ul className="flex flex-wrap items-center justify-center grow">

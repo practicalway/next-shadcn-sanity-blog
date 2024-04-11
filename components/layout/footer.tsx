@@ -17,6 +17,10 @@ const footerGroups = [
     ],
   },
   {
+    label: "Blog",
+    links: [{ label: "All Post", href: "/blog" }],
+  },
+  {
     label: "Contact",
     links: [{ label: "GitHub", href: "https://github.com/kaganmert" }],
   },

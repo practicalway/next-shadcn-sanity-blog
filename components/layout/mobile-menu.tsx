@@ -2,8 +2,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { Button } from "../ui/button";
+import ModeToggleMobile from "../ui/mode-toggle-mobile";
 
 const mobileNavLinks = [
   { label: "Work", href: "/work" },
@@ -48,7 +49,7 @@ const MobileMenu = () => {
         show={mobileNavOpen}
         as="nav"
         id="mobile-nav"
-        className="absolute left-0 z-20 w-full h-screen bg-black shadow-md top-full"
+        className="absolute left-0 z-20 w-full h-screen bg-white dark:bg-black shadow-md top-full"
         enter="transition ease-out duration-200 transform"
         enterFrom="opacity-0 translate-y-10"
         enterTo="opacity-100 translate-y-0"
@@ -63,7 +64,7 @@ const MobileMenu = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center px-4 py-2 font-medium text-white"
+                    className="flex items-center px-4 py-2 font-medium"
                     onClick={() => setMobileNavOpen(false)}
                   >
                     {link.label}
@@ -73,16 +74,8 @@ const MobileMenu = () => {
             </ul>
           </div>
 
-          <div className="px-5 py-4">
-            <Link href="/contact-us">
-              <Button
-                className="w-full"
-                type="submit"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Contact Us
-              </Button>
-            </Link>
+          <div>
+            <ModeToggleMobile />
           </div>
         </div>
       </Transition>

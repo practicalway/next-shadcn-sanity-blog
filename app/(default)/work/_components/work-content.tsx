@@ -1,8 +1,7 @@
 import { getWork } from "@/sanity/lib/sanity";
+import HeroSection from "@/components/hero-section";
 import ResumeSection from "./resume-section";
 import TechStackSection from "./tech-stack-section";
-import { motion } from "framer-motion";
-import HeroSection from "@/components/hero-section";
 
 export async function WorkContent() {
   const data = await getWork();
